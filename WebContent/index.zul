@@ -1,0 +1,142 @@
+<?page title="EFORM SYSTEM V1.0" contentType="text/html;charset=UTF-8"?>
+
+<?link rel="stylesheet" type="text/css" href="style/page.css"?>
+
+<zk>
+
+
+<borderlayout id="masterPage" height="100%" apply="com.eposapp.view.MasterView">
+    <north border="none" size="100%" height="43px" sclass="banner">        
+        <borderlayout height="100%">
+        
+            <west size="50%" border="none" sclass="banner">
+                <div>
+                	<div sclass="sys_title">
+                    	<image src="images/e_form_banner.png" />
+
+                    	<textbox id="txtDeptIdHide" value="${arg.PM_DEPT_ID}" maxlength="3" constraint="${ctt}" readonly="true" visible="false" />
+	  
+                    </div>              
+                </div>
+            </west>
+        	
+        	<center border="none" sclass="banner"></center>
+                         	
+            <east border="none" sclass="banner">                  			
+				<hbox width="100%" align="end">
+				
+					<div style="padding-right:20px;width:300px;">
+						<div style="float:left;padding:5px;">
+							<toolbarbutton label="Department" 
+								id="tlbSwitchDept"							
+								tooltiptext="Switch Department"
+								image="images/icon/department.png"
+								style="color:blue; font-size:10pt; font-weight:bold;float:left;" />
+						</div>
+						
+						<div sclass="sys_logout">
+							<toolbarbutton label="" 
+								id="tlbHome"							
+								tooltiptext="Home"
+								image="images/icon/room.ico"
+								style="color:blue; font-size:10pt; font-weight:bold" />
+						</div>
+						
+					</div>
+					
+				</hbox>						
+            </east>
+            
+        </borderlayout>                
+    </north>
+    
+    <center>
+    
+
+    	<borderlayout>
+            <west size="200px" border="none" splittable="false" collapsible="false">
+           		
+           		<div sclass="sys_left_menu">
+           		
+		            <borderlayout>
+		            	<north border="none" height="0px">	
+		            	</north>
+		            	
+		            	<center border="none">
+		            		<div height="100%">
+		            			
+		            			<tabbox id="tbLeftMenu" width="100%" height="100%" mold="accordion">
+				           			<tabs>
+				           				<tab id="tbRoot" label="ROOT" sclass="tab_header" visible="false"/>
+								        <tab id="tbOperation" label="OPERATION" sclass="tab_header" visible="false"/>					        						        
+								        <tab id="tbView" 	  label="SEARCH TRANSACTION" sclass="tab_header" visible="false"/>
+								        <tab id="tbSystem" 	  label="SYSTEM SETTING" sclass="tab_header" visible="false"/>
+								        <tab id="tbSecurity"  label="SECURITY SETTING" sclass="tab_header" visible="true"/>
+								    </tabs>
+								    
+								    <tabpanels>
+								    	<tabpanel id="tpRoot" style="padding:0px" visible="true" />
+						    			
+								    	<!-- Operation -->
+		        						<tabpanel id="tpOperation" sclass="tab_panel" style="padding:0px" visible="false">
+		        							<grid id="grOperation" style="border:0; width:100%" oddRowSclass="gridBgColor" sclass="leftMenuItem" />
+		        						</tabpanel>
+		        						
+		        						
+		        						<!-- SEARCH -->
+		        						<tabpanel id="tpView" sclass="tab_panel" style="padding:0px" visible="false">		        						
+		        							<grid id="grView" style="border:0;" oddRowSclass="gridBgColor" sclass="leftMenuItem" />		        						
+		        						</tabpanel>
+		        						
+		        						
+		        						<!-- SYSTEM MAINTENANCE -->
+		        						<tabpanel id="tpSystem" sclass="tab_panel" style="padding:0px" visible="false">
+		        							<grid id="grSystem" style="border:0;" oddRowSclass="gridBgColor" sclass="leftMenuItem" />
+		        						</tabpanel>
+		        						
+		        						
+		        						<!-- SECURITY MAINTENANCE -->
+		        						<tabpanel id="tpSecurity" sclass="tab_panel" style="padding:0px" visible="true">		        						
+		        							<grid id="grSecurity" style="border:0;" oddRowSclass="gridBgColor" sclass="leftMenuItem" />
+		        						</tabpanel>
+		        						
+		        					</tabpanels>
+		        					
+							    </tabbox>
+							    
+		            		</div>
+		            	
+		            	</center>
+
+		            </borderlayout>
+	            
+	            </div>
+                        
+            </west>
+            
+            <center border="none" autoscroll="true">
+            	<div style="padding:5px; width:100%; height:100%;">
+            		<hbox id="hbContent" width="100%" height="100%" style="overflow:auto;" />
+            		
+            		<!--
+            		<include id="incParameter" progressing="true" width="100%" height="99%" />  
+            		-->
+            	</div>
+            </center>
+            
+        </borderlayout>
+        
+       
+    </center>
+    
+    <south border="none" size="100%" height="30px" style="background:#c6d7ee;">
+    	<div>
+    		<div style="padding:3px; font-size: 8pt;">
+    			APP-CENTER V1.0. Copyright © 2017 SATHAPANA Bank Plc. All rights reserved.
+    		</div>
+		</div>
+    </south>
+
+</borderlayout>
+
+</zk>

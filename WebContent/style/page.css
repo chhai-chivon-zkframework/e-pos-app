@@ -1,0 +1,210 @@
+body {
+	padding:0px;
+	margin:0px;
+}
+
+
+.z-window, .z-window-embedded-tl, .z-window-embedded-tr, .z-window-embedded-tm{
+	background-image: none;
+	background-color: ;  *//*5aa6fa*/
+
+	content: 0px;	
+}
+
+
+.banner {
+    background-color:#FFFF00;
+    background: url(../images/bg.png) repeat-x;  
+    color: white;
+}
+
+
+.sys_title {
+	padding-left:5px; 
+	padding-top:3px;
+}
+
+.sys_logout {
+	padding-top:5px;
+	float:left;
+}
+
+.sys_left_menu {
+	border-right:1px #c6d7ee solid; 
+	height:100%
+}
+
+.tab_panel {
+	border:0px; 
+	padding:0px;
+	overflow:auto;	
+}
+
+.tab_header {
+	background: url(../images/bg.png) repeat-x;
+}
+
+
+/* data grid row */
+.sDetailView tr.z-row  
+{
+	border: 0px;
+	background: #e8eeff;
+	/* 
+	padding-top: 1px;
+	padding-bottom: 1px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	
+	height:5px; 
+	line-height:6px; 
+	min-height:5px;
+	 */
+}
+
+.sDetailView td.z-row-inner
+{
+	border: 0px;
+	border-left: 1px solid #CCCCCC;
+	border-bottom: 1px solid #CCCCCC;	
+}
+
+
+.sDetailView tr.z-row tr.z-row-over > td.z-row-inner
+{	
+	background:yellow;
+}
+
+
+/* window padding */
+.dvWinBox {
+	padding:10px 5px 0px 5px; 
+	width:100%;	
+}
+
+
+/* tool bar for all form */
+.toolbarAccess {
+	background:#F5F5F5;
+	height:33px;
+}
+
+
+
+/* zk grid paging button */
+.z-paging { 
+	border-bottom: 0px solid;
+	background: none;
+	width:100%;
+}
+
+.pagingBg {
+	width:100%;
+	background:#F9F9F9;
+}
+
+.pagingMinusPlus {
+	float:right; 
+	padding-top:4px;
+	background: none;
+}
+
+
+/* all buttons at bottom of window, ex: close, ... */
+.bottomButton {
+	width:100%; 
+	height:100px;
+	border-top:0px solid #F1F2F2; 
+	padding: 5px;	
+	text-align:left; 
+	/* background: #f2f5fd; */
+}
+
+
+/* require field sign */
+.reqF {
+	background: url(../images/star.gif) no-repeat right;
+	padding-right:10px;	
+}
+
+/* none require field sign */
+.noReqF {
+	padding-right:10px;
+	corlor:#0000FF;
+}
+
+
+/* button with icon */
+.btnIcon {
+	padding:0px;
+}
+
+
+.upperCase {
+	text-transform: uppercase;
+}
+
+
+.subPageTitle span {
+	color: #037aaa;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px; 
+	font-weight: bold;
+	padding:0px 0px 10px 10px;
+	text-transform: uppercase;
+}
+
+
+.dbSecTitle span {
+	color: #037aaa;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px; 
+	font-weight: bold;
+	padding:0px 0px 10px 10px;
+	text-transform: uppercase;
+}
+/**************************************************************************
+ **************************************************************************
+ **************************************************************************/
+
+.leftMenuItem .z-row:hover > .z-row-inner, .z-row:hover > .z-cell {
+	cursor: pointer;
+	color: #000000;
+	font-size: 8px;
+	background: #F0F0F0 !important /* d8e9fc */	
+}
+
+.leftMenuItem {
+	color:#000000; 
+	font-size:9pt; 
+	padding-left:2px;
+}
+
+.z-button {
+	border-radius: 9px;
+	background: linear-gradient(to bottom, #f0f9ff 0%,#a1dbff 100%); 
+}
+
+
+/* 
+.z-button:hover {	
+	background: linear-gradient(to bottom, #FAFAFA 100%,#a1dbff 30%); 
+}
+*/
+
+.z-paging-button {
+	border-radius: 7px;
+}
+
+.z-progressbox{
+	color: #FF0000 !important;
+	width:500px;
+	height:300px;
+}
+
+
+/* 	
+.z-tab {
+	background: linear-gradient(to bottom, #f0f9ff 100%,#a1dbff 30%); 
+}
+*/

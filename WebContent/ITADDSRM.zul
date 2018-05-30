@@ -1,0 +1,257 @@
+<?page title="ITADDAI FORM" contentType="text/html;charset=UTF-8"?>
+<?link rel="stylesheet" type="text/css" href="style/page.css"?>
+<?script type="text/javascript" src="/script/validateText.zs"?>
+<zk>
+
+    <window id="winITADDSRM"
+            border="none"
+            contentStyle="overflow:auto"
+            closable="false"
+            sizable="false"
+            hflex="1"
+            vflex="1"
+            mode="embedded"
+            apply="com.spn.appcenter.view.RoleMappingView">
+
+        <div zclass="subPageTitle">ROLE MAPPING FORM</div>
+
+        <!--<zscript src="script/validateText.zs"/>-->
+        <!--<div zclass="subPageTitle">Search User Request Form</div>-->
+
+        <toolbar id="tbAction" sclass="toolbarAccess">
+            <toolbarbutton
+                    id="tbbNew"
+                    image="images/icon/new.gif"
+                    label="New"
+                    visible="false"
+                    disabled="false"/>
+            <toolbarbutton
+                    id="tbbUnlock"
+                    image="images/icon/unlock.gif"
+                    label="Unlock"
+                    visible="false"
+                    disabled="false"/>
+            <toolbarbutton
+                    id="tbbSave"
+                    image="images/icon/save.gif"
+                    label="Save"
+                    visible="false"
+                    disabled="false"/>
+            <toolbarbutton
+                    id="tbbDelete"
+                    image="images/icon/delete.gif"
+                    label="Delete"
+                    visible="false"
+                    disabled="false"/>
+            <toolbarbutton
+                    id="tbbConfirm"
+                    image="images/icon/confirm.gif"
+                    label="Confirm"
+                    visible="false"
+                    disabled="false"/>
+            <toolbarbutton
+                    id="tbbAuth"
+                    image="images/icon/authorize.gif"
+                    label="Authorize"
+                    visible="false"
+                    disabled="false"/>
+            <toolbarbutton
+                    id="tbbView"
+                    image="images/icon/query.gif"
+                    label="Search"
+                    visible="false"
+                    disabled="false"/>
+        </toolbar>
+        <!-- end window theme -->
+
+        <div height="10px"/>
+
+        <div zclass="dvWinBox" height="700px">
+            <borderlayout height="100%">
+                <north size="100%" height="250px" border="none">
+                    <hbox>
+                        <vbox>
+                            <hbox spacing="0">
+                                <textbox id="txtToolbarHide" constraint="${ctt}" readonly="true" visible="false"
+                                         width="100px"/>
+                                <textbox id="txtConfAuth" value="" visible="false" readonly="true"/>
+                            </hbox>
+                            <hbox>
+                                <vbox width="120px" align="end">
+                                    <label value="App Code" sclass="reqF"/>
+                                </vbox>
+                                <vbox>
+                                    <combobox id="cboAppCode" width="150px" readonly="true">
+                                        <comboitem label="APP_CENTER" value="APP_CENTER"/>
+                                    </combobox>
+                                </vbox>
+                            </hbox>
+                            <hbox>
+                                <vbox width="120px" align="end">
+                                    <label value="Role ID" sclass="reqF"/>
+                                </vbox>
+                                <vbox>
+                                    <combobox id="cboRoleId" width="150px" readonly="true">
+                                        <comboitem value="ALL_ROLE" label="ALL_ROLE"/>
+                                    </combobox>
+                                </vbox>
+                            </hbox>
+                            <hbox>
+                                <vbox width="120px" align="end">
+                                    <label value="Function ID" sclass="reqF"/>
+                                </vbox>
+                                <vbox>
+                                    <combobox id="cboFuncId" width="150px" readonly="true">
+                                        <comboitem value="ALL_ROLE" label="ALL_ROLE"/>
+                                    </combobox>
+                                </vbox>
+                            </hbox>
+                            <hbox>
+                                <vbox width="120px" align="end">
+                                    <label value="Is New" sclass="reqF"/>
+                                </vbox>
+                                <vbox>
+                                    <combobox id="cboIsNew" width="100px"  readonly="true">
+                                        <comboitem value="0" label="0"/>
+                                        <comboitem value="1" label="1"/>
+                                    </combobox>
+                                </vbox>
+                            </hbox>
+                            <hbox>
+                                <vbox width="120px" align="end">
+                                    <label value="Is Unlock" sclass="reqF"/>
+                                </vbox>
+                                <vbox>
+                                    <combobox id="cboIsUnlock" width="100px" readonly="true">
+                                        <comboitem value="0" label="0"/>
+                                        <comboitem value="1" label="1"/>
+                                    </combobox>
+                                </vbox>
+                            </hbox>
+                            <hbox>
+                                <vbox width="120px" align="end">
+                                    <label value="Is Save" sclass="reqF"/>
+                                </vbox>
+                                <vbox>
+                                    <combobox id="cboIsSave" width="100px"  readonly="true">
+                                        <comboitem value="0" label="0"/>
+                                        <comboitem value="1" label="1"/>
+                                    </combobox>
+                                </vbox>
+                            </hbox>
+                        </vbox>
+
+                        <vbox>
+                            <hbox>
+                                <vbox width="120px" align="end">
+                                    <label value="Is Delete" sclass="reqF"/>
+                                </vbox>
+                                <vbox>
+                                    <combobox id="cboIsDelete" width="100px" readonly="true">
+                                        <comboitem value="0" label="0"/>
+                                        <comboitem value="1" label="1"/>
+                                    </combobox>
+                                </vbox>
+                            </hbox>
+                            <hbox>
+                                <vbox width="120px" align="end">
+                                    <label value="Is Authorize" width="100px" sclass="reqF"/>
+                                </vbox>
+                                <vbox>
+                                    <combobox id="cboIsAuthorize" width="100px" readonly="true">
+                                        <comboitem value="0" label="0"/>
+                                        <comboitem value="1" label="1"/>
+                                    </combobox>
+                                </vbox>
+                            </hbox>
+                            <hbox>
+                                <vbox width="120px" align="end">
+                                    <label value="Is View" sclass="reqF"/>
+                                </vbox>
+                                <vbox>
+                                    <combobox id="cboIsView" width="100px"  readonly="true">
+                                        <comboitem value="0" label="0"/>
+                                        <comboitem value="1" label="1"/>
+                                    </combobox>
+                                </vbox>
+                            </hbox>
+                            <hbox>
+                                <vbox width="120px" align="end">
+                                    <label value="Is Confirm" sclass="reqF"/>
+                                </vbox>
+                                <vbox>
+                                    <combobox id="cboIsConfirm" width="100px"  readonly="true">
+                                        <comboitem value="0" label="0"/>
+                                        <comboitem value="1" label="1"/>
+                                    </combobox>
+                                </vbox>
+                            </hbox>
+                            <hbox>
+                                <vbox width="120px" align="end">
+                                    <label value="Record Status" sclass="reqF"/>
+                                </vbox>
+                                <vbox>
+                                    <combobox id="cboRecord" width="100px" readonly="true">
+                                        <comboitem value="O" label="Open"/>
+                                        <comboitem value="C" label="Close"/>
+                                        <comboitem value="R" label="Reject"/>
+                                    </combobox>
+                                </vbox>
+                            </hbox>
+                            <hbox>
+                                <vbox width="120px" align="end" sclass="reqF">
+                                    <label value="Authorize Status"/>
+                                </vbox>
+                                <vbox>
+                                    <combobox id="cboStatus" width="100px" readonly="true">
+                                        <comboitem value="A" label="Autherized"/>
+                                        <comboitem value="U" label="UnAutherized"/>
+                                    </combobox>
+                                </vbox>
+                            </hbox>
+                        </vbox>
+
+                    </hbox>
+                </north>
+
+
+                <center border="none">
+                    <div>
+                        <tabbox id="tabCtrl">
+                            <tabs>
+                                <tab visible="false">Result List</tab>
+                            </tabs>
+                            <tabpanels>
+                                <tabpanel>
+                                    <div>
+                                        <grid id="grRM" mold="paging" pageSize="15" height="350px"
+                                              sizedByContent="true" span="true" sclass="sDetailView">
+                                            <columns sizable="true">
+                                                <column label="APP CODE" align="center"/>
+                                                <column label="ROLE ID" align="center"/>
+                                                <column label="FUNCTION ID" align="center"/>
+                                                <column label="IS NEW" align="center"/>
+                                                <column label="IS UNLOCK" align="center"/>
+                                                <column label="IS SAVE" align="center"/>
+                                                <column label="IS DELETE" align="center"/>
+                                                <column label="IS AUTHORIZE" align="center"/>
+                                                <column label="IS VIEW" align="center"/>
+                                                <column label="IS CONFIRM" align="center"/>
+                                                <column label="RECORD STAT" align="center"/>
+                                                <column label="AUTH STAT" align="center"/>
+                                            </columns>
+                                        </grid>
+                                    </div>
+                                </tabpanel>
+                            </tabpanels>
+                        </tabbox>
+                    </div>
+                </center>
+            </borderlayout>
+        </div>
+
+        <div zclass="bottomButton">
+            <button id="btnClose" mold="trendy" label="Close"/>
+        </div>
+    </window>
+</zk>

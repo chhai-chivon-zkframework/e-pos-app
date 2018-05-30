@@ -1,0 +1,71 @@
+<?page title="PASSWORD SETTING FORM" contentType="text/html;charset=UTF-8"?>
+<?link rel="stylesheet" type="text/css" href="style/page.css"?>
+<?script type="text/javascript" src="/script/validateText.zs"?>
+<zk>
+	<window id="winITADDSPS"
+			border="none"
+			contentStyle="overflow:auto"
+			closable="false"
+			sizable="false"
+			hflex="1"
+			vflex="1"
+			mode="embedded"
+			apply="com.spn.appcenter.view.PasswordSettingView">
+
+		<div zclass="subPageTitle">PASSWORD SETTING</div>
+
+		<div height="20px" />
+
+		<hbox>
+			<vbox width="100px" align="end">
+				<label value="Allow Sign" />
+			</vbox>
+			<textbox id="txtSign" value="" />
+		</hbox>
+
+		<div height="10px" />
+
+		<hbox>
+			<vbox width="100px" align="end">
+				<label value="Password Life" />
+			</vbox>
+			<!--<spinner id="spiPwdLife" width="100px" constraint="no empty,min 4,max 150"/>-->
+			<spinner id="spiPwdLife" width="100px"/>
+			<label value="(days)" />
+		</hbox>
+
+		<div height="10px" />
+
+		<hbox>
+			<vbox width="100px" align="end">
+				<label value="Min Pwd. Length" />
+			</vbox>
+			<!--<spinner id="spiPwdLen" width="100px" constraint="no empty,min 4,max 50" />-->
+			<spinner id="spiPwdLen" width="100px"/>
+		</hbox>
+
+		<div height="10px" />
+
+		<hbox>
+			<div style="padding-left:100px; width">
+				<vbox>
+					<checkbox id="chkCapital" label="Check Capital Letter" />
+					<checkbox id="chkLower" label="Check Small Letter" />
+					<checkbox id="chkNumber" label="Check Number" />
+				</vbox>
+			</div>
+		</hbox>
+
+		<div height="10px" />
+
+		<div style="padding-left:100px;">
+			<hbox>
+				<div style="float:left;">
+					<button id="btnSave" label="Save" />
+					<button id="btnClose" label="Close" />
+				</div>
+			</hbox>
+		</div>
+
+	</window>
+</zk>

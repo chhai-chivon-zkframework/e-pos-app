@@ -9,6 +9,7 @@ import java.util.Map;
 
 
 import org.zkoss.zk.ui.Component;
+import org.zkoss.zk.ui.Executions;
 import org.zkoss.zk.ui.event.Event;
 import org.zkoss.zk.ui.event.EventListener;
 import org.zkoss.zk.ui.event.Events;
@@ -28,6 +29,7 @@ import org.zkoss.zul.Tabpanel;
 import org.zkoss.zul.Textbox;
 import org.zkoss.zul.Toolbarbutton;
 
+import com.eposapp.config.CookieManager;
 import com.eposapp.entity.SysFunction;
 
 
@@ -117,7 +119,21 @@ public class MasterView extends SelectorComposer<Component>{
 
         grSystem.setVisible(true);
         grSecurity.setVisible(true);
+        
+        
+        this.onSecurityRedirection();
 	}
+	
+	
+	private void onSecurityRedirection() {
+		//CookieManager.setCookie(CookieManager.USER_NAME_KEY, "");
+		//CookieManager.setCookie(CookieManager.USER_PASSWORD_KEY,"");
+		if(CookieManager.getCookie(CookieManager.USER_NAME_KEY).compareToIgnoreCase("") == 0 && 
+				CookieManager.getCookie(CookieManager.USER_PASSWORD_KEY).compareToIgnoreCase("") == 0) {
+			Executions.sendRedirect("login.zul");	
+		}
+	}
+	
 	public void onLoadComponents() {
 		Map<Grid,List<SysFunction>> map = getMapSysFunction();
 		onLoadLeftComponent(map);

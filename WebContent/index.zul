@@ -12,7 +12,7 @@
             <west size="50%" border="none" sclass="banner">
                 <div>
                 	<div sclass="sys_title">
-                    	<image src="images/e_form_banner.png" />
+                    	<image src="images/pos_logo.jpeg"  width="119px"/>
 
                     	<textbox id="txtDeptIdHide" value="${arg.PM_DEPT_ID}" maxlength="3" constraint="${ctt}" readonly="true" visible="false" />
 	  

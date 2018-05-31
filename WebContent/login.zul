@@ -1,0 +1,48 @@
+<?page title="POS SYSTEM V1.0" contentType="text/html;charset=UTF-8"?>
+
+<?link rel="stylesheet" type="text/css" href="style/login.css"?>
+
+
+<zk>
+
+<div height="25%">
+	<div sclass="login_top_bar">
+    	<image src="images/pos_logo.jpeg" width="119px"/>
+    </div>      
+</div>
+
+
+<div height="70%" align="center">
+	<window id="winLogin" width="280px" border="normal" apply="com.eposapp.view.LoginView">	
+		<div style="padding:10px;">	
+			<vbox>
+				
+				<label value="User ID:" />
+				<textbox id="txtLoginID" value="" width="235px" />
+				
+				<label value="Password:" />		
+				<textbox id="txtPassword" value="Az123456#" type="password" width="235px" />
+		
+				<div height="5px" />
+		
+				<vbox width="100%" align="center">
+					<!-- <button id="btnLogin" label="Login" forward="winLogin.onOK" /> -->
+					<button id="btnLogin" label="Login" />
+				</vbox>
+				
+				<div height="5px" />
+			</vbox>
+		</div>
+	</window>
+</div>
+
+
+<div height="5%" sclass="login_footer">
+	<div style="padding:3px;" sclass="login_footer">
+		<div sclass="login_footer">POS SYSTEM V1.0</div>
+		<div sclass="login_footer">Copyright © 2017  Plc. All rights reserved.</div>
+	</div>    
+</div>
+
+
+</zk>

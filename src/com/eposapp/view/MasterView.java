@@ -1,8 +1,6 @@
 package com.eposapp.view;
 
-import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -26,6 +24,7 @@ import org.zkoss.zul.Rows;
 import org.zkoss.zul.Tab;
 import org.zkoss.zul.Tabbox;
 import org.zkoss.zul.Tabpanel;
+import org.zkoss.zul.Tabs;
 import org.zkoss.zul.Textbox;
 import org.zkoss.zul.Toolbarbutton;
 
@@ -51,7 +50,7 @@ public class MasterView extends SelectorComposer<Component>{
 	Toolbarbutton tlbSwitchDept;
 	
 	@Wire
-	Toolbarbutton tlbHome;
+	Toolbarbutton tlbLogout;
 		
 	@Wire
 	Tabbox tbLeftMenu;
@@ -104,32 +103,62 @@ public class MasterView extends SelectorComposer<Component>{
 	@Wire
 	Textbox txtDeptIdHide;
 	
+	@Wire
+	Tabs menuTab;
 	
 	@Override
 	public void doAfterCompose(Component comp) throws Exception {
 		// TODO Auto-generated method stub
 		super.doAfterCompose(comp);
 		
+		
 
-		tbSystem.setVisible(true);
-        tbSecurity.setVisible(true);
+		
 
-        tpSystem.setVisible(true);
-        tpSecurity.setVisible(true);
-
-        grSystem.setVisible(true);
-        grSecurity.setVisible(true);
+//		tbOperation.setVisible(true);
+//		tbView.setVisible(true);
+//        tbSystem.setVisible(true);
+//        tbSecurity.setVisible(true);
         
+        tpOperation.setVisible(true);
+        tpView.setVisible(true);
+        tpSecurity.setVisible(true);
+        tpSecurity.setVisible(true);
+        
+        grOperation.setVisible(true);
+		grView.setVisible(true);
+		grSecurity.setVisible(true);
+		grSystem.setVisible(true);
+		
+		Tab a = new Tab();
+		a.setLabel("Hello");
+		a.setVisible(true);
+		for(int i=0;i<4;i++) {
+			menuTab.onChildAdded(a);
+		}
+		
+		
         
         this.onSecurityRedirection();
+        
+        this.onLogout();
+
+        onLoadComponents();
 	}
 	
+	
+	private void onLogout() {
+		
+		tlbLogout.addEventListener(Events.ON_CLICK, event -> {
+			
+		});
+	}
 	
 	private void onSecurityRedirection() {
 		//CookieManager.setCookie(CookieManager.USER_NAME_KEY, "");
 		//CookieManager.setCookie(CookieManager.USER_PASSWORD_KEY,"");
-		if(CookieManager.getCookie(CookieManager.USER_NAME_KEY).compareToIgnoreCase("") == 0 && 
-				CookieManager.getCookie(CookieManager.USER_PASSWORD_KEY).compareToIgnoreCase("") == 0) {
+		if(CookieManager.getCookie(CookieManager.USER_NAME_KEY).compareToIgnoreCase("") != 0 && 
+				CookieManager.getCookie(CookieManager.USER_PASSWORD_KEY).compareToIgnoreCase("") != 0) {
 			Executions.sendRedirect("login.zul");	
 		}
 	}
@@ -163,6 +192,7 @@ public class MasterView extends SelectorComposer<Component>{
 		return map;
 	}
 
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	private void onLoadLeftComponent(Map<Grid,List<SysFunction>> map){
 		Rows rows;
 		Row rw;
@@ -181,6 +211,7 @@ public class MasterView extends SelectorComposer<Component>{
 				///start add event
 				final String tmpFuncId = "ITADSURF.zul";
 				lbl.addEventListener(Events.ON_CLICK, new EventListener() {
+					@Override
 					public void onEvent(Event event) throws Exception {
 						//IFrameSrc(tmpFuncId, null);
 					}

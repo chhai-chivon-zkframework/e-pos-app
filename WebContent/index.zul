@@ -36,8 +36,8 @@
 						
 						<div sclass="sys_logout">
 							<toolbarbutton label="" 
-								id="tlbHome"							
-								tooltiptext="Home"
+								id="tlbLogout"							
+								tooltiptext="Logout"
 								image="images/icon/room.ico"
 								style="color:blue; font-size:10pt; font-weight:bold" />
 						</div>
@@ -66,12 +66,12 @@
 		            		<div height="100%">
 		            			
 		            			<tabbox id="tbLeftMenu" width="100%" height="100%" mold="accordion">
-				           			<tabs>
+				           			<tabs id="menuTab">
 				           				<tab id="tbRoot" label="ROOT" sclass="tab_header" visible="false"/>
 								        <tab id="tbOperation" label="OPERATION" sclass="tab_header" visible="false"/>					        						        
 								        <tab id="tbView" 	  label="SEARCH TRANSACTION" sclass="tab_header" visible="false"/>
 								        <tab id="tbSystem" 	  label="SYSTEM SETTING" sclass="tab_header" visible="false"/>
-								        <tab id="tbSecurity"  label="SECURITY SETTING" sclass="tab_header" visible="true"/>
+								        <tab id="tbSecurity"  label="SECURITY SETTING" sclass="tab_header" visible="false"/>
 								    </tabs>
 								    
 								    <tabpanels>
@@ -96,7 +96,7 @@
 		        						
 		        						
 		        						<!-- SECURITY MAINTENANCE -->
-		        						<tabpanel id="tpSecurity" sclass="tab_panel" style="padding:0px" visible="true">		        						
+		        						<tabpanel id="tpSecurity" sclass="tab_panel" style="padding:0px" visible="false">		        						
 		        							<grid id="grSecurity" style="border:0;" oddRowSclass="gridBgColor" sclass="leftMenuItem" />
 		        						</tabpanel>
 		        						
